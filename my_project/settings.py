@@ -13,18 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# Source - https://stackoverflow.com/a
-# Posted by phanhuy152, modified by community. See post 'Timeline' for change history
-# Retrieved 2025-12-15, License - CC BY-SA 3.0
-
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
-    # Add to this list all the locations containing your static files 
-)
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,8 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '.herokuapp.com',
-    '127.0.0.1',
-    '8000-nielmc-django-project-0kylrta3cs.us2.codeanyapp.com',
+    '127.0.0.1'
 ]
 
 
